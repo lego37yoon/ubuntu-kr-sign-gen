@@ -1,12 +1,14 @@
 <script>
-	let name_kr = "";
-	let name_en = "";
-	let title = "";
-	let phone = "";
-	let email = "";
-	let gpg = "";
+	import { preventDefault } from 'svelte/legacy';
 
-	let sign = "";
+	let name_kr = $state("");
+	let name_en = $state("");
+	let title = $state("");
+	let phone = $state("");
+	let email = $state("");
+	let gpg = $state("");
+
+	let sign = $state("");
 
 	function generator(name_kr, name_en, title, phone, email, gpg) {
 		sign = `<div style="font-family: system-ui; line-height: 16px !important; font-size: 14px;"><br><table style="width: 100%; border-collapse: collapse;"><tbody><tr><td style="width: 100px; border: 0px; height: 87.4451px;"><img src="https://raw.githubusercontent.com/ubuntu-kr/logo-artworks/main/UbuntuKrCircleTag_w100.png" style="display: block; margin: 5px 0px; text-align: left; width: 74px;"></td><td style="border: 0px solid rgb(221, 221, 221); padding: 3px 4px 2px; height: 87.4451px; vertical-align: middle;"><strong id="nameOrg" style="font-size:13px;color:#000;letter-spacing:-1px;">${name_kr}</strong><span id="nameEng" style="font-size:11px;color:#000;">&nbsp;${name_en}</span><br><span id="department" style="font-size:11px;color:#000;">${title} of Ubuntu Korea Community</span><div id="contactInfo" style="color:#7d7d7d;margin-top:7px;"><span style="font-size:11px;line-height:14px;color:#999;"><span style="font-weight:bold; color:#616161;">Mobile</span> <span style="font-size:11px; color:#7d7d7d;">${phone}&nbsp;</span></span><br><span style="font-size:11px;color:#999;"><span style="font-weight:bold; color:#616161;">Email</span>&nbsp; <span style="font-size:11px; color:#999;"><a href="mailto:${email}" target="_blank">${email}</a></span></span><br><span style="font-size:11px;line-height:14px;color:#999;">${gpg}</span></div></td></tr></tbody></table></div>`;
@@ -18,8 +20,10 @@
 		<h1>이메일 서명 생성기</h1>
 		<form
 			class="form"
-			on:submit|preventDefault={() =>
-				generator(name_kr, name_en, title, phone, email, gpg)}
+			onsubmit={(event) => {
+				event.preventDefault();
+				generator(name_kr, name_en, title, phone, email, gpg)
+			}}
 		>
 			<div class="form-group">
 				<label>이름</label>
