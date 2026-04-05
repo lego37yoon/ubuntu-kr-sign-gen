@@ -1,6 +1,7 @@
 <script lang="ts">
     import "./layout.scss";
     import { onMount } from "svelte";
+    import { resolve } from "$app/paths";
 
     type ThemePreference = "dark" | "light" | "system";
 
@@ -51,7 +52,7 @@
     <div class="p-navigation__row--25-75">
         <div class="p-navigation__banner">
             <div class="p-navigation__tagged-logo">
-                <a class="p-navigation__link" href="/" target="_blank">
+                <a class="p-navigation__link" href={resolve("/")} target="_blank">
                     <div class="p-navigation__logo-tag">
                         <img 
                             class="p-navigation__logo-icon"
@@ -73,7 +74,7 @@
         <nav class="p-navigation__nav" id="main-nav" aria-label="Main navigation">
             <ul class="p-navigation__items">
                 <li class="p-navigation__item is-selected">
-                    <a class="p-navigation__link" href="/">서명 생성기</a>
+                    <a class="p-navigation__link" href={resolve("/")}>서명 생성기</a>
                 </li>
                 <li class="p-navigation__item">
                     <a class="p-navigation__link" href="https://www.ubuntu-kr.org/">홈</a>
