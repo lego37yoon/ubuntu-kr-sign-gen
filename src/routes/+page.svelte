@@ -1,7 +1,7 @@
 <script lang="ts">
 	import hljs from "highlight.js/lib/core";
 	import xml from "highlight.js/lib/languages/xml";
-	import "highlight.js/styles/atom-one-light.min.css"
+	import "highlight.js/styles/atom-one-dark.min.css"
 
 	hljs.registerLanguage("xml", xml);
 
@@ -52,63 +52,63 @@
 		}}
 	>
 		<div class="form-group">
-			<label for="name_kr">이름</label>
+			<label for="name_kr">이름 <sup class="required">*</sup></label>
 			<input
 				bind:value={name_kr}
 				name="name_kr"
 				type="text"
 				required
-				placeholder="이름"
+				placeholder="예: 홍길동"
 			/>
 		</div>
 		<div class="form-group">
-			<label for="name_en">영문 이름</label>
+			<label for="name_en">영문 이름 <sup class="required">*</sup></label>
 			<input
 				bind:value={name_en}
 				name="name_en"
 				type="text"
 				required
-				placeholder="영문 이름"
+				placeholder="예: Gildong Hong"
 			/>
 		</div>
 		<div class="form-group">
-			<label for="title">직책</label>
+			<label for="title">직책 <sup class="required">*</sup></label>
 			<input
 				bind:value={title}
 				name="title"
 				type="text"
 				required
-				placeholder="직책"
+				placeholder="예: Event Organizer"
 			/>
 		</div>
 		<div class="form-group">
-			<label for="phone">휴대폰 번호</label>
+			<label for="phone">휴대폰 번호 <sup class="required">*</sup></label>
 			<input
 				bind:value={phone}
 				name="phone"
 				type="tel"
 				required
-				placeholder="휴대폰 번호"
+				placeholder="예: +82 10-0000-0000"
 			/>
 		</div>
 		<div class="form-group">
-			<label for="email">메일 주소</label>
+			<label for="email">메일 주소 <sup class="required">*</sup></label>
 			<input
 				bind:value={email}
 				name="email"
 				type="email"
 				required
-				placeholder="메일 주소"
+				placeholder="예: contact@ubuntu-kr.org"
 			/>
 		</div>
 		<div class="form-group">
-			<label for="gpg">GPG 키</label>
+			<label for="gpg">GPG 키 <sup class="required">*</sup></label>
 			<input
 				bind:value={gpg}
 				name="gpg"
 				type="text"
 				required
-				placeholder="gpg 키"
+				placeholder="예: ABCD EFGH HIJK LMNO PQRS"
 			/>
 		</div>
 		<button type="submit">생성</button>
@@ -150,6 +150,10 @@
 		overflow-x: auto;
 		text-wrap: wrap;
 		max-height: 10rem;
+	}
+
+	.required {
+		color: #e9500e;
 	}
 
 	.preview-box {
