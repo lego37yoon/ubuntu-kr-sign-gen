@@ -115,7 +115,7 @@
 	</form>
 	<div class="grid-col">
 		<div class="p-card">
-			<h2>서명 코드</h2>
+			<h2 class="p-heading--3">서명 코드</h2>
 			<div class="result p-card__content p-code-snippet">
 				<pre class="p-code-snippet__block"><code>{@html hljs.highlight(sign, { language: "XML" }).value}</code></pre>
 				<button class="p-button--base has-icon" type="button" aria-label="복사하기" onclick={() => copyCode(sign)}>
@@ -124,7 +124,7 @@
 			</div>
 		</div>
 		<div class="p-card preview-card">
-			<h2>미리보기</h2>
+			<h2 class="p-heading--3">미리보기</h2>
 			<div id="preview" class="preview-box p-card__content">
 				{@html sign}
 			</div>
