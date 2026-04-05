@@ -10,16 +10,16 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/adapter-netlify": "^6.0.4",
-		"@sveltejs/kit": "^2.55.0",
+		"@sveltejs/kit": "^2.56.1",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
-		"svelte": "^5.54.1",
-		"typescript": "^5.9.3",
-		"vite": "^8.0.1"
+		"svelte": "^5.55.1",
+		"typescript": "^6.0.2",
+		"vite": "^8.0.3"
 	},
 	"type": "module",
 	"dependencies": {
 		"highlight.js": "^11.11.1",
-		"sass": "^1.98.0",
+		"sass": "^1.99.0",
 		"vanilla-framework": "^4.46.0"
 	}
 }
