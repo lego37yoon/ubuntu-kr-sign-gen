@@ -9,10 +9,10 @@
     let themeToggle = $state<ThemePreference>("system");
     let menuToggle = $state<"has-menu-open"|"">("");
     let systemPrefersDark = $state(false);
-    let pageTheme = $derived<"is-paper" | "is-dark">(
+    let pageTheme = $derived<"is-light" | "is-dark">(
         themeToggle === "dark" || (themeToggle === "system" && systemPrefersDark)
             ? "is-dark"
-            : "is-paper"
+            : "is-light"
     );
     let { children } = $props();
 
@@ -47,11 +47,11 @@
 </script>
 
 <div class={pageTheme}>
-<header class={`p-navigation ${menuToggle}`}>
+<header class={`p-navigation is-dark ${menuToggle}`}>
     <div class="p-navigation__row--25-75">
         <div class="p-navigation__banner">
             <div class="p-navigation__tagged-logo">
-                <a class="p-navigation__link" href="https://ubuntu-kr.org" target="_blank">
+                <a class="p-navigation__link" href="/" target="_blank">
                     <div class="p-navigation__logo-tag">
                         <img 
                             class="p-navigation__logo-icon"
@@ -74,6 +74,9 @@
             <ul class="p-navigation__items">
                 <li class="p-navigation__item is-selected">
                     <a class="p-navigation__link" href="/">서명 생성기</a>
+                </li>
+                <li class="p-navigation__item">
+                    <a class="p-navigation__link" href="https://www.ubuntu-kr.org/">홈</a>
                 </li>
                 <li class="p-navigation__item">
                     <a class="p-navigation__link" href="https://disclosures.ubuntu-kr.org/">공시</a>
@@ -106,7 +109,7 @@
     </div>
 </header>
 
-<main>
+<main class="grid-row">
     {@render children()}
 </main>
 </div>
@@ -131,5 +134,15 @@
     .p-navigation__items .p-navigation__item select {
         margin: 0.25rem;
         width: min-content;
+    }
+
+    div.is-dark {
+        background: #494949;
+        color: #fff;
+    }
+
+    div.is-dark, div.is-light {
+        min-height: 100vh;
+        height: max-content;
     }
 </style>
